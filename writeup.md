@@ -28,7 +28,7 @@ $$(x + 13) \mod 10 = 8$$
 
 A solution for this can then be found easily. Since our rng only had one state, had a very simple transition from one state to the next, and had a very short period (10), we only needed one output from the rng in order to predict future outputs correctly.
 
-The math in xorshift128 is a bit more complicated. Let $$\( s_0 \)$$ and $$\( s_1 \)$$ be the current 64-bit states. The new $$\( s_0 \)$$ and $$\( s_1 \)$$ are calculated as follows:
+The math in xorshift128 is a bit more complicated. Let $$s_0$$ and $$s_1$$ be the current 64-bit states. The new $$s_0$$ and $$s_1$$ are calculated as follows:
 
 $$
 x = s_0
@@ -50,7 +50,7 @@ $$
 s_1 = x \oplus y \oplus (x \gg 17) \oplus (y \gg 26)
 $$
 
-The rng then outputs $$\( s_0 \)$$.
+The rng then outputs $$s_0$$.
 
 #### Z3  
 
