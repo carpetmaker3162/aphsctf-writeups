@@ -22,13 +22,13 @@ xorshift128+ has a 128-bit internal state, in the form of two 64-bit integers. G
 
 How to solve for the internal state? We do some math. To explain how, let's use a very simple (and very bad) rng as an example: our rng will have only one state and will generate integers from 0-9. On each iteration of the rng, the new state is `(prevState + 13) modulo 10`, and the rng returns the new state as an output. This is repeated for future iterations. 
 
-Let's say our rng outputs the number 8. Let \( x \) be the rng's state right before generating 8. We can then establish an equation:
+Let's say our rng outputs the number 8. Let $$\( x \)$$ be the rng's state right before generating 8. We can then establish an equation:
 
 $$(x + 13) \mod 10 = 8$$
 
 A solution for this can then be found easily. Since our rng only had one state, had a very simple transition from one state to the next, and had a very short period (10), we only needed one output from the rng in order to predict future outputs correctly.
 
-The math in xorshift128 is a bit more complicated. Let \( s_0 \) and \( s_1 \) be the current 64-bit states. The new \( s_0 \) and \( s_1 \) are calculated as follows:
+The math in xorshift128 is a bit more complicated. Let $$\( s_0 \)$$ and $$\( s_1 \)$$ be the current 64-bit states. The new $$\( s_0 \)$$ and $$\( s_1 \)$$ are calculated as follows:
 
 $$
 x = s_0
@@ -50,7 +50,7 @@ $$
 s_1 = x \oplus y \oplus (x \gg 17) \oplus (y \gg 26)
 $$
 
-The rng then outputs \( s_0 \).
+The rng then outputs $$\( s_0 \)$$.
 
 #### Z3  
 
