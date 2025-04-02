@@ -1,6 +1,7 @@
 ## Hints  
 
 Hint 1: the intended solution does not exploit any of the session management code
+
 Hint 2: can we exploit the randomness of the program?
 
 ## Intended Solution  
