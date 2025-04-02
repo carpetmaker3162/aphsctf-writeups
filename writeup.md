@@ -26,7 +26,7 @@ Let's say our rng outputs the number 8. Let $$\( x \)$$ be the rng's state right
 
 $$(x + 13) \mod 10 = 8$$
 
-A solution for this can then be found easily ($$x = 5$$). Since our rng only had one state, had a very simple transition from one state to the next, and had a very short period (10), we only needed one output from the rng in order to predict future outputs correctly.
+A solution for this can then be found easily ($$x = 5$$). We can then keep applying this operation to predict future outputs of the rng. Since our rng only had one state, had a very simple transition from one state to the next, and had a very short period (10), we only needed one output from the rng in order to be able to make correct predictions.
 
 The math in xorshift128 is a bit more complicated. Let $$s_0$$ and $$s_1$$ be the current 64-bit states. The new $$s_0$$ and $$s_1$$ are calculated as follows:
 
