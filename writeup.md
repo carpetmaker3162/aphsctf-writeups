@@ -58,7 +58,7 @@ Luckily, we don't need to do too much math ourselves. Z3 is a theorem prover whi
 
 To use Z3, we need to write a symbolic representation of the xorshift128+ algorithm—essentially expressing its operations using symbolic variables instead of concrete numeric values.
 
-Here's an example program to solve for future outputs given past outputs of V8's `Math.random()`. I wont go into too many implementation details but if you are interested it involves an interesting rabbit hole about how floating point numbers are represented (IEEE 754). 
+Here's an example program to solve for future outputs given past outputs of V8's `Math.random()`. I wont go into too many implementation details but if you are interested it involves an interesting rabbit hole about how floating point numbers are represented in computers (IEEE 754). 
 
 ```
 (link program here)
