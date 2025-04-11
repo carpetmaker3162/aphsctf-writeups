@@ -6,7 +6,7 @@ Hint 2: can we exploit the randomness of the program?
 
 ## Intended Solution  
 
-(1/100)^5 = one in 10 billion, so it's not feasible to bruteforce. 
+(1/100)^5 = one in 10 billion chance. After brute forcing 10 billion guesses you will have a ~63.21% chance of success. In real life you would also be limited by things like rate limiting, so it's not feasible to bruteforce.
 
 How does the server check the user's guesses against the correct number? Looking at the code, it makes a POST request to `/api/guess`, which generates a random number on the spot using `/api/random`. In other words the correct number is generated AFTER the user makes a guess, instead of pre-generating it, so we can't really trivially know the correct number beforehand (afaik)
 
@@ -79,5 +79,3 @@ Secure sources of randomness include `/dev/urandom`, which is considered secure 
 #### Note
 
 *Our `Random` class specifically emulates how `Math.random()` is implemented in Google Chrome and Microsoft Edge. Depending on your browser, the implementation of `Math.random()` may have slight variations, but the underlying algorithm is the same. Regardless, this CTF is equally doable regardless of which browser you are using.
-
-I don't know the exact details of the `Math.random()` implementation in the V8 engine. V8 seems to use the normal (not reverse) xorshift128+ algorithm, and then I also found some descriptions online of it popping outputs in LIFO (last in first out) order... etc. If someone can figure out the details of how V8 implements `Math.random()` I'd be very glad to know (please do reach  out).
