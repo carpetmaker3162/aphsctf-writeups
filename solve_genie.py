@@ -4,7 +4,6 @@ from math import *
 import requests
 
 
-# may 403 with ctx.cl website
 URL = 'http://localhost:3000'
 
 
