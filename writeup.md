@@ -50,7 +50,7 @@ $$
 s_1 = x \oplus y \oplus (x \gg 17) \oplus (y \gg 26)
 $$
 
-The rng then outputs $$s_0$$.
+The rng then outputs $$s_0$$. Given several outputs, we can then establish a system of several equations and solve for the latest states.
 
 #### Z3  
 
