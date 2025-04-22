@@ -52,9 +52,7 @@ The memory address `[rbp - 8]` is being used as a counter variable (`i`) in the 
 
 `11e0: cmp qword ptr [rbp - 8], rax` -- compare counter to `rax`.
 
-`11e4: jb 0x11c7` -- If counter < max, jump back to loop body.
-
-then it is incremented and compared against `rax` later in the program (which stores the large value of 7203796438858066709). 
+`11e4: jb 0x11c7` -- If counter < total, jump back to loop body.
 
 ### Conclusions about slow_add
 
