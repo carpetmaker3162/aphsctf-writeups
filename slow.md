@@ -56,9 +56,9 @@ The memory address `[rbp - 8]` is being used as a counter variable (`i`) in the 
 
 ### Conclusions about slow_add
 
-Remember that only one byte is moved from `[rbp - 9]` into `eax`, and only one byte is later written back. Compilers also usually aligns variables by size: `[rbp - 9]` is one byte before `[rbp - 8]`. It is safe to assume that `[rbp - 9]` is a byte-sized value (such as a `char`).
+Remember that only one byte is moved from `[rbp - 9]` into `eax`, and later only one byte is written back. Compilers also usually aligns variables by size: `[rbp - 9]` is one byte before `[rbp - 8]`. It is safe to assume that `[rbp - 9]` is a byte-sized value (such as a `char`).
 
-Putting it all together, the program is incrementing a byte (`[rbp - 9]`) 7203796438858066709 times. On an average this will take years to do.
+Putting it all together, the program is incrementing a byte (`[rbp - 9]`) 7203796438858066709 times. On an average computer this will take years to do.
 
 Effectively the program is doing the following:
 
