@@ -50,13 +50,9 @@ Luckily, we don't need to do too much math ourselves. Z3 is a theorem prover whi
 
 To use Z3, we need to write a symbolic representation of the xorshift128+ algorithm—essentially expressing its operations using symbolic variables instead of concrete numeric values.
 
-Here's an example program to solve for future outputs given past outputs of V8's `Math.random()`. I wont go into too many implementation details but if you are interested it involves an interesting rabbit hole about how floating point numbers are represented in computers (IEEE 754). 
+`solve_genie.py` is an example solve script. Hopefully it is somewhat self-documenting, it also involves an interesting rabbit hole about how computers store floats (IEEE 754) which helps you understand why floating point imprecision happens.
 
-```
-(link program here)
-```
-
-#### Beating the genie  
+#### Winning
 
 The client is allowed to call the `/api/random` API using `fetch`. You can call the API from the console a few times to get a few prng outputs from the server, then use them to predict future outputs using Z3. 
 
