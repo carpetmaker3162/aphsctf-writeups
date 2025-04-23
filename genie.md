@@ -1,12 +1,4 @@
-## Hints  
-
-Hint 1: the intended solution does not exploit any of the session management code
-
-Hint 2: can we exploit the randomness of the program?
-
-## Intended Solution  
-
-(1/100)^5 = one in 10 billion chance. After brute forcing 10 billion guesses you will have a ~63.21% chance of success. In real life you would also be limited by things like rate limiting, so it's not feasible to bruteforce.
+1/100)^5 = one in 10 billion chance. After brute forcing 10 billion guesses you will have a ~63.21% chance of success. In real life you would also be limited by things like rate limiting, so it's not feasible to bruteforce.
 
 How does the server check the user's guesses against the correct number? Looking at the code, it makes a POST request to `/api/guess`, which generates a random number on the spot using `/api/random`. In other words the correct number is generated AFTER the user makes a guess, instead of pre-generating it, so we can't really trivially know the correct number beforehand (afaik)
 
