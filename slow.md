@@ -92,26 +92,4 @@ For the loop condition, the counter is compared to `[rbp - 64]`, which always ho
     12ad: 89 ca                        	mov	edx, ecx
     12af: 88 10                        	mov	byte ptr [rax], dl
 ```
-
-On the very first line the address `[rbp - 48]` is loaded into `rdx`. The value of the loop counter `[rbp - 72]` is loaded into `rax`. Then, the address that `rdx` contains is added to `rax`.
-
-What does `[rbp - 48]` contain?
-
-```
-    1207: 48 b8 16 01 09 04 74 65 6b 3c	movabs	rax, 4353685013742027030
-    1211: 48 ba 05 09 16 03 0c 04 10 16	movabs	rdx, 1589775118099679493
-    121b: 48 89 45 d0                  	mov	qword ptr [rbp - 48], rax
-    121f: 48 89 55 d8                  	mov	qword ptr [rbp - 40], rdx
-    1223: 48 b8 01 01 07 0a 14 0e 16 05	movabs	rax, 366495898907640065
-    122d: 48 ba 0a 10 0e 05 10 46 46 14	movabs	rdx, 1460932163746533386
-    1237: 48 89 45 e0                  	mov	qword ptr [rbp - 32], rax
-    123b: 48 89 55 e8                  	mov	qword ptr [rbp - 24], rdx
-    123f: 48 b8 44 7a 16 15 79 0b 7e 32	movabs	rax, 3638358163634682436
-    1249: 48 89 45 f0                  	mov	qword ptr [rbp - 16], rax
-```
-
-We notice an unusual instruction located before the call to slow_add: 
-
-`xor eax, 90` -- Usually, it is common to xor a register with itself to clear it. It is less common to xor anything with a constant.
-
-What does `eax` contain? 
+... to be continued
