@@ -55,4 +55,14 @@ Where:
 - M = 2^17
 - ord(s_i) refers to the ASCII value of the i-th character of the string
 
+In other words, when you start with a certain password, increasing the ASCII value of the first character by 1 will increase the value of the hash by 31^0 = **1**. Increasing the ASCII of the 2nd char will increase the value of the hash by 31^1 = **31**, and so on.
 
+You can manually solve this by playing around with different strings. Alternatively I used chatgpt to write a script that cracks a hash value with arbitrary values for B and M, which uses backtracking. (too lazy to write myself)
+
+"ab8" is a valid password that produces the hash value 56951. 
+
+This was not the original password I used; since the hash mods the hash value by 2^17 there are an infinite number of possible passwords which produce this hash. This is what is called a hash collision.
+
+## Takeaways
+
+Avoid writing your own key derivation function for passwords. Currently the common key derivation functions used in industry include PBKDF2, bcrypt, Argon2, etc. These have the property of intentionally being computationally expensive (slow to compute), which helps resist against brute-force attacks.
