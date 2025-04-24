@@ -2,6 +2,8 @@ We should be able to do this challenge with any of the binaries.
 
 The challenge can be solved quickly by decompiling the binary right away instead of disassembling it. But imo reading the disassembly is a lot more interesting.
 
+*Prerequisite knowledge: Basic assembly*
+
 Disassembling with objdump: 
 
 ```
