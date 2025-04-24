@@ -51,8 +51,8 @@ $$
 $$
 
 Where:
-- $$ B = 31 $$
-- $$ M = 2^{17} $$
-- $$ \text{ord}(s_i) $$ is the ASCII value of the $$ i $$-th character of the string $$ s $$
+$$ B = 31 $$
+$$ M = 2^{17} $$
+$$ \text{ord}(s_i) $$ is the ASCII value of the $$ i $$-th character of the string $$ s $$
 
 This is a simple polynomial rolling hash.
