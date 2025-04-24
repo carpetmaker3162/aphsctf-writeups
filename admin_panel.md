@@ -49,3 +49,10 @@ This is a simple polynomial rolling hash defined as
 $$
 \text{hash}(s) = (\text{ord}(s_0) \cdot B^0 + \text{ord}(s_1) \cdot B^1 + \text{ord}(s_2) \cdot B^2 + \ldots + \text{ord}(s_{n-1}) \cdot B^{n-1}) \mod M
 $$
+
+Where:
+- \( B = 31 \)
+- \( M = 2^{17} \)
+- \( \text{ord}(s_i) \) is the ASCII value of the \( i \)-th character of the string \( s \)
+
+This is a simple polynomial rolling hash.
