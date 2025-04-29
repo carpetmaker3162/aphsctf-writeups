@@ -79,7 +79,7 @@ The memory address `rbp-8` is being used as a counter variable (`i`) in the for-
 
 Remember that only one byte is moved from `rbp-9` into `eax`, and later only one byte is written back. Compilers also usually aligns variables by size: `rbp-9` is one byte below `rbp-8`. It is safe to assume that `rbp-9` contains a byte-sized value (such as a `char`).
 
-Putting it all together, `slow_add` is incrementing a char 7203796438858066709 times. On an average computer this will take years to do.
+Putting it all together, `slow_add` is incrementing a char (at `rbp-9`) 7203796438858066709 times. On an average computer this will take years to do.
 
 Effectively `slow_add` is doing the following:
 
