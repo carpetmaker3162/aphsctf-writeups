@@ -4,6 +4,8 @@ from math import *
 import requests
 
 
+# use this if you are running the app locally.
+# otherwise replace with the url of the challenge
 URL = 'http://localhost:3000'
 
 
